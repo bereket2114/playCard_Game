@@ -1,94 +1,51 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play Cards Here</title>
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
-                    },
-                    boxShadow: {
-                        'glow-emerald': '0 0 25px -5px rgba(16, 185, 129, 0.3)',
-                        'glow-teal': '0 0 35px -5px rgba(20, 184, 166, 0.4)',
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- Custom Fonts & Stylesheet -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="cardGame.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171b2d">
+  <title>Two-Handed — Card Room</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/cardGame.css">
 </head>
-<body class="min-h-screen bg-slate-950 text-slate-100 font-sans flex flex-col items-center justify-between p-4 sm:p-6 md:p-10 relative overflow-x-hidden selection:bg-emerald-500 selection:text-slate-950">
-
-    <!-- Ambient Glowing Background Accents -->
-    <div class="fixed top-1/4 -left-32 w-96 h-96 bg-emerald-600/10 rounded-full blur-[120px] pointer-events-none"></div>
-    <div class="fixed bottom-1/4 -right-32 w-96 h-96 bg-teal-500/10 rounded-full blur-[120px] pointer-events-none"></div>
-
-    <!-- Header Section -->
-    <header class="word text-center mt-2 mb-4 z-10">
-        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 drop-shadow-sm">
-            Play Card Games
-        </h1>
-    </header>
-    
-    <!-- Main Game Board Container -->
-    <main id="card" class="w-full max-w-2xl my-auto flex flex-col items-center z-10">
-        
-        <!-- Status / Alert Message Display -->
-        <div class="alert w-full text-center min-h-[2.5rem] flex items-center justify-center mb-3">
-            <h4 class="warn text-amber-400 font-semibold text-base sm:text-lg tracking-wide transition-all duration-300 drop-shadow-sm"></h4>
-        </div>
-
-        <!-- Felt Table Glass Container -->
-        <div class="table w-full backdrop-blur-2xl bg-slate-900/60 border border-slate-800/80 rounded-3xl p-6 sm:p-10 shadow-2xl shadow-slate-950/80 grid grid-cols-2 gap-y-6 gap-x-4 sm:gap-x-8 items-center justify-items-center relative ring-1 ring-white/10">
-            
-            <!-- Controls: Draw Button -->
-            <button type="button" class="col-span-2 row-start-1 group relative cursor-pointer px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-extrabold rounded-2xl shadow-glow-emerald hover:shadow-glow-teal active:scale-95 transition-all duration-200 text-base sm:text-lg tracking-wider uppercase flex items-center gap-2">
-                <span>Draw your cards</span>
-            </button>
-
-            <!-- Player 1 Header -->
-            <h2 class="col-start-1 row-start-2 text-sm sm:text-base font-bold tracking-widest text-slate-400 uppercase flex items-center gap-2">
-                Player 1
-            </h2>
-
-            <!-- Player 1 Card Slot -->
-            <img id="player1" src="" alt="Player1" class="col-start-1 row-start-3 w-32 h-48 sm:w-44 sm:h-64 object-contain bg-slate-950/80 border-2 border-slate-800/80 rounded-2xl shadow-xl shadow-black/50 transition-all duration-300 hover:scale-105 hover:border-emerald-500/50">
-
-            <!-- Player 2 Header -->
-            <h2 class="col-start-2 row-start-2 text-sm sm:text-base font-bold tracking-widest text-slate-400 uppercase flex items-center gap-2">
-                Player 2
-            </h2>
-
-            <!-- Player 2 Card Slot -->
-            <img id="player2" src="" alt="Player2" class="col-start-2 row-start-3 w-32 h-48 sm:w-44 sm:h-64 object-contain bg-slate-950/80 border-2 border-slate-800/80 rounded-2xl shadow-xl shadow-black/50 transition-all duration-300 hover:scale-105 hover:border-teal-500/50">
-            
-        </div>
-    </main>
-
-    <!-- Outcome / Results Banner -->
-    <div class="h3 my-6 text-center min-h-[3.5rem] flex items-center justify-center z-10">
-        <h3 class="text-2xl sm:text-4xl font-extrabold tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-amber-300 via-amber-200 to-yellow-400 drop-shadow-md"></h3>
-    </div>
-
-    <!-- Footer -->
-    <footer class="mt-auto py-3 text-center z-10">
-        <p class="copRight text-xs text-slate-500 font-medium tracking-wider">&copy; 2026 Bereket woldemariyam. All rights reserved.</p>
-    </footer>
-
-    <!-- Game Logic JavaScript -->
-    <script type="text/javaScript" src="/cardGame.js"></script>
+<body>
+  <div class="paper-grain" aria-hidden="true"></div>
+  <header class="masthead">
+    <p class="eyebrow"><span>Est. 2026</span><span>•</span><span>Two players / one deck</span></p>
+    <div class="brand-line"><span class="brand-mark" aria-hidden="true">♠</span><h1>Two-Handed</h1><span class="brand-mark mirrored" aria-hidden="true">♠</span></div>
+    <p class="subhead">A small card room for settling important things</p>
+  </header>
+  <main class="game-shell">
+    <section class="score-ledger" aria-label="Match score">
+      <div class="ledger-cell"><span class="ledger-label">Player one</span><strong id="player1Score">00</strong></div>
+      <div class="ledger-center"><span id="roundLabel">Round 00</span><i aria-hidden="true"></i><span id="deckCount">52 cards in the shoe</span></div>
+      <div class="ledger-cell right"><span class="ledger-label">Player two</span><strong id="player2Score">00</strong></div>
+    </section>
+    <section class="table" aria-label="Card table">
+      <div class="table-corner top-left" aria-hidden="true"></div><div class="table-corner top-right" aria-hidden="true"></div><div class="table-corner bottom-left" aria-hidden="true"></div><div class="table-corner bottom-right" aria-hidden="true"></div>
+      <div class="table-header">
+        <p id="status" class="status" aria-live="polite">The deck has been cut. Place your hands.</p>
+        <button id="drawButton" type="button" class="draw-button"><span class="button-top">Draw</span><span class="button-bottom">the next hand <b>↗</b></span></button>
+      </div>
+      <div class="hands">
+        <article class="player player-one">
+          <div class="player-label"><span class="seat">01</span><h2>Player <em>One</em></h2></div>
+          <div class="card-stage"><div class="card-shadow" aria-hidden="true"></div><div class="card-placeholder" id="player1Placeholder" aria-hidden="true"><span>A</span><i>♠</i><small>Waiting</small></div><img id="player1" alt="Player one’s card" hidden></div>
+          <p id="player1Card" class="card-caption">—</p>
+        </article>
+        <div class="versus" aria-hidden="true"><span>V</span><i></i><span>S</span></div>
+        <article class="player player-two">
+          <div class="player-label"><span class="seat">02</span><h2>Player <em>Two</em></h2></div>
+          <div class="card-stage"><div class="card-shadow" aria-hidden="true"></div><div class="card-placeholder red" id="player2Placeholder" aria-hidden="true"><span>A</span><i>♥</i><small>Waiting</small></div><img id="player2" alt="Player two’s card" hidden></div>
+          <p id="player2Card" class="card-caption">—</p>
+        </article>
+      </div>
+      <div id="outcome" class="outcome" aria-live="polite"><span class="outcome-rule"></span><h3>First hand decides the story.</h3><span class="outcome-rule"></span></div>
+    </section>
+  </main>
+  <footer><span>♣</span> Built for a fair fight <span>♦</span></footer>
+  <script src="/cardGame.js"></script>
 </body>
 </html>
