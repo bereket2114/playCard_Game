@@ -1,17 +1,18 @@
 {
-  "name": "crad_game",
+  "name": "card-duel-react",
+  "private": true,
   "version": "1.0.0",
-  "description": "card-game project",
-  "license": "ISC",
-  "author": "Bereket Woldemariyam",
-  "type": "commonjs",
-  "main": "server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "dev": "vite",
+    "build": "vite",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "dotenv": "^17.4.2",
-    "express": "^5.2.1"
-  }
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {}
 }
